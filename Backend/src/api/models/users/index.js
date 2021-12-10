@@ -5,17 +5,7 @@ const DB_COLLECTION = 'users';
 
 const userCollection = client.db(DB_NAME).collection(DB_COLLECTION);
 
-const create = async ({ name, password, email }, typeRole) => {
-  const newUser = await userCollection.insertOne({ name, password, email, role: typeRole });
-  return {
-    user: {
-      name,
-      email,
-      role: typeRole,
-      _id: newUser.insertedId,
-    },
-  };
-};
+const create = async ({ email, password, repeatPassword }) => await userCollection.insertOne({ email, password, repeatPassword });
 
 module.exports = {
   create,
