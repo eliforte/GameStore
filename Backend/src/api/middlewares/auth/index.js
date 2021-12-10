@@ -1,4 +1,4 @@
-require('dotenv').config;
+require('dotenv').config();
 const { UNAUTHORIZED } = require('http-status-codes').StatusCodes;
 const jwt = require('jsonwebtoken');
 const messages = require('../../global/messages');
