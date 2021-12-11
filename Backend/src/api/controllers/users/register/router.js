@@ -1,5 +1,5 @@
 const express = require('express');
-const register = require('./register');
+const register = require('./index');
 
 const router = express.Router({ mergeParams: true });
 

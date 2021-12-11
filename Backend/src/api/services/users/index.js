@@ -17,7 +17,7 @@ const loginUser = async ({ email, password }) => {
     return messages.INCORRECT_401;
   };
 
-  const { password: passwordDB, ...userWithoutPassword } = userFound;
+  const { password: passwordDB, ...userWithoutPassword } = userExist;
 
   return auth.createToken(userWithoutPassword);
 };
