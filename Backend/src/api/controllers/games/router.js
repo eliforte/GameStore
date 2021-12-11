@@ -3,6 +3,6 @@ const create = require('./create');
 
 const router = express.Router({ mergeParams: true });
 
-router.post('/', create);
+router.post('/register', create);
 
 module.exports = router;

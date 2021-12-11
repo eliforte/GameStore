@@ -6,6 +6,6 @@ module.exports = rescue(async (req, res, next) => {
   const { name, price, quantity } = req.body;
   const game = await service.createGame({ name, price, quantity }, req.user);
   if (game.message) return next(game);
-
-  return res.status(ACCEPTED);
+  console.log(game);
+  return res.status(ACCEPTED).json();
 });

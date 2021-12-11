@@ -7,5 +7,5 @@ module.exports = rescue(async (req, res, next) => {
   const newUser = await service.createUser({ email, password, repeatPassword });
   if (newUser.message) return next(newUser);
 
-  return res.status(CREATED);
+  return res.status(CREATED).json();
 });
