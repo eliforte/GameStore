@@ -9,3 +9,7 @@ const create = async ({ name, price, quantity, image, userId }) => {
   const newGame = await userCollection.insertOne({ name, price, quantity, image, userId });
   return newGame;
 };
+
+module.exports = {
+  create,
+};
