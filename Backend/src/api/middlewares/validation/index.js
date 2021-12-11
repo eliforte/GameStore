@@ -15,7 +15,7 @@ const SCHEMARegister = Joi.object({
 
 const SCHEMAGame = Joi.object({
   name: Joi.string().required(),
-  price: Joi.string().required(),
+  price: Joi.number().required(),
   quantity: Joi.number().required(),
 });
 
