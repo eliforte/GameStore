@@ -1,7 +1,7 @@
-require('dotenv').config();
-
+require('dotenv').config()
 const { MongoClient } = require('mongodb');
-const MONGO_DB_URL = `mongodb://${process.env.HOST || 'mongodb'}:27014/GameStore`;
+
+const MONGO_DB_URL = `mongodb://${process.env.HOST || 'mongodb'}:27017/GameStore`;
 const OPTIONS = {
   useNewUrlParser: true,
   useUnifiedTopology: true,
