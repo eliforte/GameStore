@@ -1,7 +1,7 @@
 require('dotenv').config()
 const { MongoClient } = require('mongodb');
 
-const MONGO_DB_URL = `mongodb+srv://${process.env.USER}:${process.env.SECRET_MONGODB}@cluster0.oksz0.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
+const MONGO_DB_URL = process.env.MONGODB_URL;
 const OPTIONS = {
   useNewUrlParser: true,
   useUnifiedTopology: true,
