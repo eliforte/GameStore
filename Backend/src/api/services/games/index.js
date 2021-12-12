@@ -20,4 +20,5 @@ const addImage = async (id) => {
 
 module.exports = {
   createGame,
+  addImage,
 };
