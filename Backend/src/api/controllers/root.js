@@ -10,7 +10,6 @@ const root = express.Router({ mergeParams: true });
 
 root.use('/register', validation.register, routerRegister);
 root.use('/login', validation.login, routerLogin);
-root.use('/game', auth.verifyToken, validation.game, routerGames);
-root.use('/game/image',auth.verifyToken, routerUpdoad);
+root.use('/games', auth.verifyToken, routerGames, routerUpdoad);
 
 module.exports = root;

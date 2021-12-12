@@ -3,6 +3,6 @@ const upload = require('./index');
 
 const router = express.Router({ mergeParams: true });
 
-router.post('/:id', upload)
+router.post('/image/:id', upload);
 
 module.exports = router;

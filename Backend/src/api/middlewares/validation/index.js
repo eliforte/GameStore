@@ -31,7 +31,7 @@ const register = rescue(async (req, _res, next) => {
   next();
 });
 
-const game = rescue(async (req, _res, next) => {
+const gameRegister = rescue(async (req, _res, next) => {
   const { error } = SCHEMAGame.validate(req.body);
   if (error) return next({ message: error.message, status: BAD_REQUEST });
   next();
@@ -40,5 +40,5 @@ const game = rescue(async (req, _res, next) => {
 module.exports = {
   login,
   register,
-  game,
+  gameRegister,
 };
