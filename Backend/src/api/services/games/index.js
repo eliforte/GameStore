@@ -10,6 +10,14 @@ const createGame = async ({ name, price, quantity }, infoUser) => {
   return newGame;
 };
 
+const addImage = async (id) => {
+  const game = await modelGame.findById(id);
+  const image = `localhost:3000/src/uploads/${id}.jepg`;
+  const newGame = { ...game, image };
+  const createImage = await modelGame.updateGame(id, newGame);
+  return createImage;
+};
+
 module.exports = {
   createGame,
 };
