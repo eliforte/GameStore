@@ -10,6 +10,10 @@ const createGame = async ({ name, price, quantity }, infoUser) => {
   return newGame;
 };
 
+const findGame = async (id) => {
+  if (!id) return messages.INVALID_ID_400;
+}
+
 const addImage = async (id) => {
   if(!id) return messages.INVALID_ID_400;
   const game = await modelGame.findById(id);
@@ -22,4 +26,5 @@ const addImage = async (id) => {
 module.exports = {
   createGame,
   addImage,
+  findGame,
 };
