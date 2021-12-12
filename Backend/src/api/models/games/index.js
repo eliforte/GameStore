@@ -27,12 +27,12 @@ const updateGame = async (id, infoGame) => {
   return value;
 }
 
-const updateGame = async (id) => await userCollection.deleteOne({ _id: ObjectId(id) });
+const removeGame = async (id) => await userCollection.deleteOne({ _id: ObjectId(id) });
 
 module.exports = {
   create,
   listGame,
   findById,
   updateGame,
-  updateGame,
+  removeGame,
 };
