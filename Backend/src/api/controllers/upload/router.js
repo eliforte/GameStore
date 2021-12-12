@@ -1,8 +1,9 @@
 const express = require('express');
-const upload = require('./index');
+const uploadController = require('./index');
+const uploadMiddleware = require('../../middlewares/upload');
 
 const router = express.Router({ mergeParams: true });
 
-router.post('/image/:id', upload);
+router.post('/image/:id', uploadMiddleware.single('file'), uploadController);
 
 module.exports = router;

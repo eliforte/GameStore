@@ -5,14 +5,14 @@ const message = require('../../global/messages');
 const storage = multer.diskStorage({
   destination: async (req, file, callback) => {
     const { id } = req.params;
-    const game = await service.findById(id);
+    const game = await service.findGame(id);
     if (!game) callback(message.INVALID_ID_400);
 
     callback(null, 'src/uploads/');
   },
   filename: (req, file, callback) => {
     const { id } = req.params;
-    const newTitle = `${id}.jepg`;
+    const newTitle = `${id}.jpeg`;
     callback(null, newTitle);
   },
 });
