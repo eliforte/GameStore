@@ -33,7 +33,7 @@ const removeGame = async (id) => {
 const addImage = async (id) => {
   if(!id) return messages.INVALID_ID_400;
   const game = await modelGame.findById(id);
-  const image = `${id}.jepg`;
+  const image = `${id}.jpeg`;
   const newGame = { ...game, image };
   const createImage = await modelGame.updateGame(id, newGame);
   return createImage;
