@@ -19,7 +19,7 @@ io.on('connection', (socket) => {
   console.log(`Usuário conectado no socket ${socket.id}`);
 });
 
-app.use(express.static(path.resolve(__dirname, 'uploads')));
+app.use(express.static(path.resolve(__dirname, '..', 'uploads')));
 app.use(bodyParser.json());
 app.use(cors());
 app.use(root);
