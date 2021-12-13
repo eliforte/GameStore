@@ -12,7 +12,7 @@ const client = new MongoClient(MONGO_DB_URL, OPTIONS);
 const connection = async () => {
   try {
     client.connect();
-    client.on('error', (error) => console.error(error));
+    // client.on('error', (error) => console.error(error));
     client.once('open', () => console.log('Connected to the database!'));
   } catch (err) {
     console.log('Connection failed');
