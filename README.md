@@ -24,6 +24,7 @@ disponibilização em nuvem de arquivos.
 
 Deploy da aplicação feita na plataforma gratuita de hospedagem [Heroku](https://id.heroku.com/).
 O teste cobrem 100% da aplicação, usando a ferramenta [Jest](https://jestjs.io/pt-BR/docs/getting-started).
+*Obs: teste em desenvolvimento*
 
 ## Requisições e End-Points
 
