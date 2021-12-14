@@ -21,7 +21,7 @@ const findGame = async (id) => {
 
 const updateGame = async (id, infoGames) => {
   const game = await modelGame.updateGame(id, infoGames);
-  if (!recipe) return messages.GAME_NOT_EXIST_404;
+  if (!game) return messages.GAME_NOT_EXIST_404;
   return game;
 };
 
@@ -30,11 +30,10 @@ const removeGame = async (id) => {
   await modelGame.removeGame(id);
 };
 
-const addImage = async (id) => {
+const addImage = async (id, url) => {
   if(!id) return messages.INVALID_ID_400;
   const game = await modelGame.findById(id);
-  const image = `https://game-store-14.herokuapp.com/${id}.jpeg`;
-  const newGame = { ...game, image };
+  const newGame = { ...game, image: url };
   const createImage = await modelGame.updateGame(id, newGame);
   return createImage;
 };

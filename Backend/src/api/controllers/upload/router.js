@@ -1,9 +1,10 @@
 const express = require('express');
+const multer = require('multer');
+const multerConfig = require('../../middlewares/upload/multer')
 const uploadController = require('./post');
-const uploadMiddleware = require('../../middlewares/upload');
 
 const router = express.Router({ mergeParams: true });
 
-router.post('/image/:id', uploadMiddleware.single('file'), uploadController);
+router.post('/image/:id', multer(multerConfig).single('file'), uploadController);
 
 module.exports = router;
