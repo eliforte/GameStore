@@ -8,6 +8,6 @@ const root = express.Router({ mergeParams: true });
 
 root.use('/register', validation.register, routerRegister);
 root.use('/login', validation.login, routerLogin);
-root.use('/games', routerGames, routerUpdoad);
+root.use('/games', routerUpdoad, routerGames);
 
 module.exports = root;
