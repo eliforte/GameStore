@@ -14,9 +14,9 @@ const SCHEMARegister = Joi.object({
 });
 
 const SCHEMAGame = Joi.object({
-  name: Joi.string(),
-  price: Joi.number(),
-  quantity: Joi.number(),
+  name: Joi.string().required(),
+  price: Joi.number().positive().required(),
+  quantity: Joi.number().integer().required(),
 });
 
 const login = rescue(async (req, _res, next) => {
@@ -32,7 +32,8 @@ const register = rescue(async (req, _res, next) => {
 });
 
 const gameRegister = rescue(async (req, _res, next) => {
-  const { error } = SCHEMAGame.validate(req.body);
+  const { name, price, quantity } = req.body;
+  const { error } = SCHEMAGame.validate({ name, price, quantity });
   if (error) return next({ message: error.message, status: BAD_REQUEST });
   next();
 });
