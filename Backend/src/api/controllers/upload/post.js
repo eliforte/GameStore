@@ -10,5 +10,5 @@ module.exports = rescue(async (req, res, next) => {
   if (newGame.message) return next(newGame)
   console.log(req.file);
 
-  return res.status(OK).json({ message: 'Upload concluído com sucesso!' })
+  return res.status(OK).json({ message: 'Upload completed successfully!' })
 });
