@@ -14,9 +14,9 @@ const SCHEMARegister = Joi.object({
 });
 
 const SCHEMAGame = Joi.object({
-  name: Joi.string().required(),
-  price: Joi.number().required(),
-  quantity: Joi.number().required(),
+  name: Joi.string(),
+  price: Joi.number(),
+  quantity: Joi.number(),
 });
 
 const login = rescue(async (req, _res, next) => {
