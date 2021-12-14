@@ -1,8 +1,8 @@
 require('dotenv').config();
 const { UNAUTHORIZED } = require('http-status-codes').StatusCodes;
 const jwt = require('jsonwebtoken');
-const messages = require('../../global/messages');
-const modelUsers = require('../../models/users');
+const messages = require('../../error/messages');
+const modelUsers = require('../../../models/users');
 
 const jwtConfig = {
   expiresIn: '7d',

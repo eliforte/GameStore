@@ -1,6 +1,6 @@
 const { client } = require('../connection');
 const { ObjectId } =  require('mongodb');
-const message = require('../../global/messages');
+const message = require('../../global/error/messages');
 
 const DB_NAME = 'GameStore';
 const DB_COLLECTION = 'games';

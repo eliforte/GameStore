@@ -4,8 +4,8 @@ const findById = require('./findById');
 const list = require('./list');
 const remove = require('./remove');
 const update = require('./update');
-const validade = require('../../middlewares/validation');
-const auth = require('../../middlewares/auth');
+const validade = require('../../global/middlewares/validation');
+const auth = require('../../global/middlewares/auth');
 
 const router = express.Router({ mergeParams: true });
 

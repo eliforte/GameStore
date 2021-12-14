@@ -1,6 +1,6 @@
 const modelUser = require('../../models/users');
-const auth = require('../../middlewares/auth');
-const messages = require('../../global/messages');
+const auth = require('../../global/middlewares/auth');
+const messages = require('../../global/error/messages');
 
 const createUser = async ({ email, password, repeatPassword }) => {
   const userExist = await modelUser.findByEmail(email);
