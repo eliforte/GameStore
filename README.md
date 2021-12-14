@@ -2,9 +2,7 @@
 
 API desenvolvida para fazer o controle de um database de uma Game Store.
 
-![GitHub watchers](https://img.shields.io/github/watchers/eliforte/GameStore?style=social)
 ![GitHub followers](https://img.shields.io/github/followers/eliforte?style=social)
-![GitHub last commit](https://img.shields.io/github/last-commit/eliforte/GameStore)
 
 ## Sobre
   Aplicação desenvolvida por [Elias Forte](https://github.com/eliforte).
