@@ -16,7 +16,7 @@ const storageTypes = {
     },
     filename: (req, file, callback) => {
       const { id } = req.params;
-      file.key = `${id}.jpeg`;
+      file.key = `${file.originalname}${id}.jpeg`;
       callback(null, file.key);
     },
   }),
@@ -27,7 +27,7 @@ const storageTypes = {
     acl: 'public-read',
     key: (req, file, callback) => {
       const { id } = req.params;
-      const newTitle = `${id}.jpeg`;
+      const newTitle = `${file.originalname}${id}.jpeg`;
       callback(null, newTitle);
     },
   }),
