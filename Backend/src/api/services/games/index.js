@@ -1,11 +1,11 @@
 const modelGame = require('../../models/games');
-const { ApiError: { NewError } } = require('../../global/middlewares/error');
+const { ApiError: { NewError } } = require('../../global/error/apiError');
 const messages = require('../../global/error/messages');
 
 const createGame = async ({ name, price, quantity }, infoUser) => {
-  if (!name || !price || !quantity) {
-    return NewError(messages.INVALID_ENTRIES_400);
-  }
+  if (!name || !price || !quantity) return NewError(messages.INVALID_ENTRIES_400);
+  const gameExist = await modelGame.findByName(name);
+  if (gameExist) return NewError(messages.GAME_EXIST_409)
   const { _id: userId } = infoUser;
   const newGame = await modelGame.create({ name, price, quantity, userId });
   return newGame;

@@ -29,10 +29,13 @@ const updateGame = async (id, infoGame) => {
 
 const removeGame = async (id) => await userCollection.deleteOne({ _id: ObjectId(id) });
 
+const findByName = async (name) => await userCollection.findOne({ name: { $regex: `/${name}/i` } })
+
 module.exports = {
   create,
   listGame,
   findById,
   updateGame,
   removeGame,
+  findByName,
 };

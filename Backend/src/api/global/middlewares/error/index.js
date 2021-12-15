@@ -1,12 +1,10 @@
-const { ApiError } = require('../../error/apiError');
 const { INTERNAL_SERVER_ERROR } = require('http-status-codes').StatusCodes;
 
-const err = (err, _req, res, _next) => {
-  if (err instanceof ApiError) {
+module.exports = (err, _req, res, _next) => {
+  if (err && err.status) {
     return res.status(err.status).json({ message: err.message });
+  } else {
+    console.log(err);
   }
-  console.log(err);
-  return res.status(INTERNAL_SERVER_ERROR).json({ message: err.message });
+  return res.status(INTERNAL_SERVER_ERROR).end();
 };
-
-module.exports = { err };

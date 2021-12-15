@@ -1,7 +1,7 @@
 require('dotenv').config();
 const multer = require('multer');
 const path = require('path');
-const service = require('../../services/games');
+const service = require('../../../services/games');
 const aws = require('aws-sdk');
 const multerS3 = require('multer-s3');
 

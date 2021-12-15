@@ -8,6 +8,7 @@ const USER_NOT_EXIST_404 = { message: 'User not exist', status: NOT_FOUND };
 const GAME_NOT_EXIST_404 = { message: 'Game not exist', status: NOT_FOUND };
 const INVALID_ENTRIES_400 = { message: 'Invalid entries', status: BAD_REQUEST };
 const INVALID_ID_400 = { message: 'Invalid game ID', status: BAD_REQUEST };
+const GAME_EXIST_409 = { message: 'Game exist! Please choose another game.', status: CONFLICT };
 
 module.exports = {
   JWT_MALFORMED_401,
@@ -18,4 +19,5 @@ module.exports = {
   GAME_NOT_EXIST_404,
   INVALID_ENTRIES_400,
   INVALID_ID_400,
+  GAME_EXIST_409,
 };

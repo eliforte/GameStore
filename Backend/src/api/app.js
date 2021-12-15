@@ -1,11 +1,10 @@
 const express = require('express');
 const http = require('http');
-const { Server, Socket } = require('socket.io');
+const { Server } = require('socket.io');
 const cors = require('cors');
-const path = require('path');
 const bodyParser = require('body-parser');
 const root = require('./controllers/root');
-const error = require('./middlewares/error');
+const error = require('./global/middlewares/error');
 
 const app = express();
 const serverHttp = http.createServer(app);
@@ -19,7 +18,6 @@ io.on('connection', (socket) => {
   console.log(`Usuário conectado no socket ${socket.id}`);
 });
 
-// app.use(express.static(path.resolve(__dirname, '..', 'uploads')));
 app.use(bodyParser.json());
 app.use(cors());
 app.use(root);
