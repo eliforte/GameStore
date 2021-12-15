@@ -1,6 +1,11 @@
 const modelGame = require('../../models/games');
 const { ApiError: { NewError } } = require('../../global/error/apiError');
 const messages = require('../../global/error/messages');
+const { ObjectId } = require('mongodb');
+
+const validadeId = (id) => {
+  if (!ObjectId.isValid(id)) return NewError(messages.INVALID_ID_400);
+};
 
 const createGame = async ({ name, price, quantity }, infoUser) => {
   if (!name || !price || !quantity) return NewError(messages.INVALID_ENTRIES_400);
@@ -11,30 +16,37 @@ const createGame = async ({ name, price, quantity }, infoUser) => {
   return newGame;
 };
 
-const listGames = async () => await modelGame.listGame();
+const listGames = async () => {
+  const gamesList = await modelGame.listGame();
+  if (!gamesList.length) return NewError(messages.NOT_FOUND_LIST_404);
+  return gamesList;
+};
 
 const findGame = async (id) => {
-  if (!id) return messages.INVALID_ID_400;
+  validadeId(id);
   const game = await modelGame.findById(id);
-  if (!game) return messages.GAME_NOT_EXIST_404;
+  if (!game) return NewError(messages.GAME_NOT_EXIST_404);
   return game;
 };
 
 const updateGame = async (id, infoGames) => {
+  validadeId(id);
   const game = await modelGame.updateGame(id, infoGames);
-  if (!game) return messages.GAME_NOT_EXIST_404;
+  if (!game) return NewError(messages.GAME_NOT_EXIST_404);
   return game;
 };
 
 const removeGame = async (id) => {
-  if (!id) return messages.GAME_NOT_EXIST_404;
+  validadeId(id);
   await modelGame.removeGame(id);
 };
 
 const addImage = async (id, url) => {
-  if(!id) return messages.INVALID_ID_400;
+  validadeId(id);
   const game = await modelGame.findById(id);
-  const newGame = { ...game, image: url };
+  if (!game) return NewError(messages.GAME_NOT_EXIST_404);
+  const { image, ...inforGames } = game;
+  const newGame = { ...inforGames, image: url };
   const createImage = await modelGame.updateGame(id, newGame);
   return createImage;
 };
