@@ -21,7 +21,14 @@ login dos usuários feita com o [JsonWebToken](https://www.npmjs.com/package/jso
 disponibilização em nuvem de arquivos.
 
 Deploy da aplicação feita na plataforma gratuita de hospedagem [Heroku](https://id.heroku.com/).
-O teste cobrem 100% da aplicação, usando a ferramenta [Jest](https://jestjs.io/pt-BR/docs/getting-started).
+
+### Testes
+
+Foram feitos teste de integração, cobrindo 100% da aplicação, usando as ferramentas [Chai](https://www.npmjs.com/package/chai) para fazer as asserções junto
+com plug-in [Chai-Http](https://www.npmjs.com/package/chai-http) e o [Mongo-Memory-Server](https://www.npmjs.com/package/mongodb-memory-server), que respectivamente,
+foram usados para realizar as requisições <code>HTTP</code> para o servidor criado em memória. Com os [Sion](https://www.npmjs.com/package/sinon) foram feitos os
+mocks necessários.
+
 *Obs: teste em desenvolvimento*
 
 ## Requisições e End-Points
