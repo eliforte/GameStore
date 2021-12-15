@@ -1,3 +1,4 @@
+require('dotenv').config();
 const chai = require('chai');
 const sinon = require('sinon');
 const chaiHttp = require('chai-http');
@@ -183,7 +184,7 @@ describe('POST /login', () => {
 
     it('a propriedade "token" tem um token JWT válido', () => {
       const token = response.body.token;
-      const userWithoutPassword = jwt.decode(token);
+      const userWithoutPassword = jwt.verify(token, process.env.SECRET);
 
       expect(userWithoutPassword.data.email).to.be.equals(EMAIL);
     });
