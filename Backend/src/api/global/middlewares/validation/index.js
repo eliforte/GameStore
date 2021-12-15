@@ -13,10 +13,16 @@ const SCHEMARegister = Joi.object({
   repeatPassword: Joi.ref('password'),
 });
 
-const SCHEMAGame = Joi.object({
+const SCHEMAGameRegister = Joi.object({
   name: Joi.string().required(),
   price: Joi.number().positive().required(),
   quantity: Joi.number().integer().required(),
+});
+
+const SCHEMAGameUpdate = Joi.object({
+  name: Joi.string(),
+  price: Joi.number(),
+  quantity: Joi.number(),
 });
 
 const login = rescue(async (req, _res, next) => {
@@ -33,7 +39,14 @@ const register = rescue(async (req, _res, next) => {
 
 const gameRegister = rescue(async (req, _res, next) => {
   const { name, price, quantity } = req.body;
-  const { error } = SCHEMAGame.validate({ name, price, quantity });
+  const { error } = SCHEMAGameRegister.validate({ name, price, quantity });
+  if (error) return next({ message: error.message, status: BAD_REQUEST });
+  next();
+});
+
+const gameUpdate = rescue(async (req, _res, next) => {
+  const { name, price, quantity } = req.body;
+  const { error } = SCHEMAGameUpdate.validate({ name, price, quantity });
   if (error) return next({ message: error.message, status: BAD_REQUEST });
   next();
 });
@@ -42,4 +55,5 @@ module.exports = {
   login,
   register,
   gameRegister,
+  gameUpdate,
 };

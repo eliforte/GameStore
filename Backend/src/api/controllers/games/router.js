@@ -12,7 +12,7 @@ const router = express.Router({ mergeParams: true });
 router.get('/', list);
 router.post('/register',auth.verifyToken, validade.gameRegister, create);
 router.get('/:id', findById);
-router.put('/:id',auth.verifyToken, validade.gameRegister, update);
+router.put('/:id',auth.verifyToken, validade.gameUpdate, update);
 router.delete('/:id',auth.verifyToken, remove);
 
 module.exports = router;
