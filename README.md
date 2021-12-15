@@ -8,9 +8,9 @@ API desenvolvida para fazer o controle de um database de uma Game Store.
   Aplicação desenvolvida por [Elias Forte](https://github.com/eliforte).
   
 ### Contatos
-<a href="https://twitter.com/Eli_fortee"><img src="https://img.icons8.com/fluency/48/000000/twitter.png"/></a>
-<a href="https://www.instagram.com/eliifort/"><img src="https://img.icons8.com/fluency/48/000000/instagram-new.png"/></a>
-<a href="https://www.linkedin.com/in/elias-forte/"><img src="https://img.icons8.com/fluency/48/000000/linkedin.png"/></a>
+<a targer="_blank" href="https://twitter.com/Eli_fortee"><img src="https://img.icons8.com/fluency/48/000000/twitter.png"/></a>
+<a targer="_blank" href="https://www.instagram.com/eliifort/"><img src="https://img.icons8.com/fluency/48/000000/instagram-new.png"/></a>
+<a targer="_blank" href="https://www.linkedin.com/in/elias-forte/"><img src="https://img.icons8.com/fluency/48/000000/linkedin.png"/></a>
 
 ## Ferramentas utilizadas
 
