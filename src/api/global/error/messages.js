@@ -10,6 +10,7 @@ const INVALID_ENTRIES_400 = { message: 'Invalid entries', status: BAD_REQUEST };
 const INVALID_ID_400 = { message: 'Invalid game ID', status: BAD_REQUEST };
 const GAME_EXIST_409 = { message: 'Game exist! Please choose another game.', status: CONFLICT };
 const NOT_FOUND_LIST_404 = { message: 'No games found :/', status: NOT_FOUND };
+const INCORRECT_PASSWORD_409 = { message: 'Passwor and repeatPassword must be equal', staus: CONFLICT }
 
 module.exports = {
   JWT_MALFORMED_401,
@@ -22,4 +23,5 @@ module.exports = {
   INVALID_ID_400,
   GAME_EXIST_409,
   NOT_FOUND_LIST_404,
+  INCORRECT_PASSWORD_409,
 };
