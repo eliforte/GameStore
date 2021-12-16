@@ -16,11 +16,7 @@ const createGame = async ({ name, price, quantity }, infoUser) => {
   return newGame;
 };
 
-const listGames = async () => {
-  const gamesList = await modelGame.listGame();
-  if (!gamesList.length) return NewError(messages.NOT_FOUND_LIST_404);
-  return gamesList;
-};
+const listGames = async () => await modelGame.listGame();
 
 const findGame = async (id) => {
   validadeId(id);
