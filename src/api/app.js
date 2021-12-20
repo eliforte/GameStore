@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const http = require('http');
 const { Server } = require('socket.io');
@@ -10,7 +11,7 @@ const app = express();
 const serverHttp = http.createServer(app);
 const io = new Server(serverHttp, {
   cors: {
-    origin: 'https://game-store-eliforte.vercel.app/',
+    origin: process.env.FRONT,
   }
 });
 
