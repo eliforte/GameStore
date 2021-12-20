@@ -27,7 +27,8 @@ const findGame = async (id) => {
 
 const updateGame = async (id, infoGames) => {
   validadeId(id);
-  const game = await modelGame.updateGame(id, infoGames);
+  const { _id: removeId, ...restInforGames } = infoGames;
+  const game = await modelGame.updateGame(id, restInforGames);
   if (!game) return NewError(messages.GAME_NOT_EXIST_404);
   return game;
 };
