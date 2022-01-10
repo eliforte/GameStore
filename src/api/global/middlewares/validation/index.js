@@ -1,6 +1,6 @@
 const Joi = require('joi');
 const rescue = require('express-rescue');
-const { BAD_REQUEST } = require('http-status-codes').StatusCodes;;
+const { BAD_REQUEST } = require('http-status-codes').StatusCodes;
 
 const SCHEMALogin = Joi.object({
   email: Joi.string().email().required(),
