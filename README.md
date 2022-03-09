@@ -1,5 +1,5 @@
 # GameStore API
-## (API offline)
+## (API está off-line)
 API desenvolvida para fazer o controle de um database de uma Game Store.
 
 ![GitHub followers](https://img.shields.io/github/followers/eliforte?style=social)
